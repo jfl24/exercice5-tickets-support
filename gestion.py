@@ -45,3 +45,12 @@ def update_ticket(tickets):
         ticket["état"] = etat
     ticket["classe"] = classe_ticket(ticket["titre"] + " " + ticket["description"])
     print("\nTicket Modifié")
+
+#Delete
+def delete_ticket(tickets):
+    lire_tickets(tickets)
+    if not tickets:
+        return
+    index = int(input("Entrez le numero du ticket a supprimer")) - 1
+    ticket =tickets.pop(index)
+    print(f'Ticket {ticket["titre"]} a été supprimé')
